@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1f102b"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/Shapka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Расписание"
+        android:textColor="#e8ddc1"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/NameShow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Имя"
+        android:textColor="#e8ddc1"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/Shapka"
+        app:layout_constraintTop_toBottomOf="@id/Shapka"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#28FFFFFF"
+        app:layout_constraintBottom_toTopOf="@id/Dopi"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        app:layout_constraintTop_toBottomOf="@id/Shapka"
+        android:layout_marginTop="50dp"
+        android:id="@+id/Dopi"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#1f102b"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.775"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="1"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/VnutriScrolla"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                app:layout_constraintTop_toTopOf="@id/VnutriScrolla"
+                app:layout_constraintLeft_toLeftOf="@id/VnutriScrolla"
+                android:layout_marginStart="10dp"
+                android:id="@+id/Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Выберите день недели:"
+                android:textColor="#e8ddc1"
+                android:textSize="20dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerscrolla"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintRight_toRightOf="@id/VnutriScrolla"
+                app:layout_constraintLeft_toRightOf="@id/Name"
+                app:layout_constraintTop_toTopOf="@id/VnutriScrolla"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/bezhev"
+                android:entries="@array/catNames"/>
+
+            <Button
+                android:id="@+id/pastWeek"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Прош. \n неделя"
+                android:textSize="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/spinnerscrolla"/>
+
+            <Button
+                android:id="@+id/nextWeek"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="След. \n неделя"
+                android:textSize="10dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/spinnerscrolla"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tablica"
+                app:layout_constraintTop_toBottomOf="@id/spinnerscrolla"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="15dp">
+
+                <TableRow android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/dataShow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:text="date"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+                </TableRow>
+                <TableRow android:layout_marginTop="15dp">
+                    <TextView
+                        android:id="@+id/nonred"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:text="Руководство:"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textdlya"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:textColor="@color/bezhev"
+                        android:layout_margin="1dp"/>
+
+                    <TextView
+                        android:id="@+id/textdlya2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/bezhev"
+                        android:layout_margin="1dp"/>
+
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/nonred2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:text="Бармен:"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textdlya3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:textColor="@color/bezhev" />
+
+                    <TextView
+                        android:id="@+id/textdlya4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/bezhev" />
+
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/nonred3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:text="Хостес:"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textdlya5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:textColor="@color/bezhev" />
+
+                    <TextView
+                        android:id="@+id/textdlya6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/bezhev" />
+
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/nonred4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:text="Официанты:"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textdlya7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:textColor="@color/bezhev" />
+
+                    <TextView
+                        android:id="@+id/textdlya8"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:layout_weight="1.4"
+                        android:textColor="@color/bezhev" />
+
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/nonred5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:text="Шеф-повар:"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textdlya9"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:textColor="@color/bezhev" />
+
+                    <TextView
+                        android:id="@+id/textdlya10"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/bezhev" />
+
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/nonred6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:text="Повара:"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textdlya11"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:textColor="@color/bezhev" />
+
+                    <TextView
+                        android:id="@+id/textdlya12"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="20dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/bezhev" />
+
+                </TableRow>
+            </TableLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

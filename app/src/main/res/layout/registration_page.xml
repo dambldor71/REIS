@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#1f102b"
+    android:orientation="vertical">
+
+
+    <TextView
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/Shapka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Авторизация"
+        android:textColor="#e8ddc1"
+        android:textSize="40sp" />
+
+    <EditText
+        android:id="@+id/NameRegistr"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:background="#E7DCC0"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Введите фамилию"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Shapka" />
+
+    <EditText
+        android:id="@+id/CodRegistr"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:background="#E7DCC0"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Введите код"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/NameRegistr" />
+
+    <Button
+        android:id="@+id/VhodBut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/CodRegistr"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="Подтвердить вход"
+        android:textSize="18dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
